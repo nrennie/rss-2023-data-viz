@@ -1,13 +1,5 @@
 /*-- scss:defaults --*/
 
-// fonts
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
-// font family
-$font-family-sans-serif: 'Source Sans 3', Arial, sans-serif !default;
-$presentation-heading-font: 'Source Sans 3', Arial, sans-serif !default;
-
 // font size
 $presentation-h1-font-size: 2.6em;
 $presentation-h2-font-size: 1.7em;
@@ -20,7 +12,7 @@ $presentation-line-height: 1.5em;
 $presentation-heading-color: #005573 !default;
 
 // code
-$code-color: #d3a435 !default;
+$code-color: #005573 !default;
 $code-block-font-size: 0.6em;
 $code-block-border-color: #005573;
 $code-block-bg: #fafafa;
@@ -81,7 +73,7 @@ section.has-dark-background a, section.has-dark-background a:hover {
   right: 30px;
   padding-right: 20px !important;
   padding-bottom: 30px !important;
-  max-height: 60px !important;
+  max-height: 100px !important;
   z-index: -1;
 }
 
