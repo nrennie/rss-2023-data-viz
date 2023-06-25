@@ -1,0 +1,85 @@
+---
+title: "Data visualisation: new best practice guidance from RSS publications"
+author: "Andreas Krause, Nicola Rennie, & Brian Tarran"
+subtitle: "RSS International Conference"
+editor: source
+format: 
+  revealjs: 
+    theme: RSSstyle.scss
+    self-contained: true
+    height: 900
+    width: 1600
+    logo: "logo.png"
+---
+
+## About us
+
+# Topic 1 {background-color="#005573"}
+
+## Slide 1
+
+# {RSSthemes} {background-color="#005573"}
+
+## {RSSthemes} R package
+
+* Colour palettes
+
+* Base R helper functions
+
+* {ggplot2} helper functions
+
+## Installation
+
+Installing from GitHub:
+
+```{r}
+#| echo: true
+#| eval: false
+remotes::install_github("nrennie/RSSthemes")
+```
+
+## Base R example
+
+## {ggplot2} example
+
+::: columns
+::: {.column}
+
+* {ggplot2} is an R package that provides functionality for drawing graphics.
+
+```{r}
+#| eval: false
+#| echo: true
+install.packages("ggplot2")
+```
+
+:::
+
+::: {.column}
+
+![](images/ggplot2.png){fig-align="center" fig-alt="ggplot2 hex sticker logo" width=60%}
+:::
+:::
+
+## {ggplot2}: basic plot
+
+```{r}
+#| echo: true
+#| output-location: column
+library(ggplot2)
+g <- ggplot(data = mtcars) +
+  geom_bar(mapping = aes(x = cyl))
+g
+```
+
+## Links
+
+
+{{< fa brands github >}} [brtarran/rssdatavisguide](https://github.com/brtarran/rssdatavisguide)
+
+
+
+
+
+
+
