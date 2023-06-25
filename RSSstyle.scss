@@ -1,0 +1,103 @@
+/*-- scss:defaults --*/
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+// font family
+$font-family-sans-serif: 'Source Sans 3', Arial, sans-serif !default;
+$presentation-heading-font: 'Source Sans 3', Arial, sans-serif !default;
+
+// font size
+$presentation-h1-font-size: 2.6em;
+$presentation-h2-font-size: 1.7em;
+$presentation-h3-font-size: 1.4em;
+$presentation-h4-font-size: 1.1em;
+$presentation-font-size-root: 40px;
+$presentation-line-height: 1.5em;
+
+// font colour
+$presentation-heading-color: #005573 !default;
+
+// code
+$code-color: #d3a435 !default;
+$code-block-font-size: 0.6em;
+$code-block-border-color: #005573;
+$code-block-bg: #fafafa;
+
+// bg colours 
+$body-color: #005573;
+$link-color: #d3a435;
+$body-bg: #ffffff;
+
+/*-- scss:rules --*/
+
+.btn-webr {
+  background-color: $code-block-bg !important;
+  border-color: $link-color;
+  border-width: 3px;
+  border-radius: 15px !important;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-family: $font-family-sans-serif;
+  font-size: 20px;
+  cursor:pointer;
+}
+
+.subtitle {
+  font-size: $presentation-h3-font-size;
+  font-family: $font-family-sans-serif;
+}
+
+h2 {
+  padding-bottom: 35px;
+}
+
+.author {
+  color: $body-bg;
+  font-size: $presentation-h4-font-size;
+  font-family: $font-family-sans-serif;
+}
+
+.author a {
+  color: $body-bg;
+  font-size: $presentation-h4-font-size;
+  font-family: $font-family-sans-serif;
+}
+
+section.has-dark-background a, section.has-dark-background a:hover {
+  color: $body-bg;
+  font-size: $presentation-h4-font-size;
+  font-family: $font-family-sans-serif;
+}
+
+.reveal .footer {
+  color: #005573;
+  font-family: $font-family-sans-serif;
+  padding-bottom: 25px;
+}
+
+.reveal .slide-logo {
+  right: 30px;
+  padding-right: 20px !important;
+  padding-bottom: 30px !important;
+  max-height: 60px !important;
+  z-index: -1;
+}
+
+.reveal .slide-menu-button {
+    left: 5px;
+    top: 15px;
+    padding-left: 10px;
+    color: #b4b7b8;
+  }
+
+.reveal .progress {
+  background: rgba(0, 0, 0, 0.2);
+  color: #d3a435;
+  height: 2%;
+}
+
+.right {
+  text-align: right !important
+}
