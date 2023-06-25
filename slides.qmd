@@ -1,22 +1,74 @@
 ---
 title: "Data visualisation: new best practice guidance from RSS publications"
 author: "Andreas Krause, Nicola Rennie, & Brian Tarran"
-subtitle: "RSS International Conference"
+subtitle: "RSS International Conference 2023"
 editor: source
 format: 
   revealjs: 
     theme: RSSstyle.scss
     self-contained: true
-    height: 900
-    width: 1600
     logo: "logo.png"
+    footer: ""
 ---
 
 ## About us
 
-# Topic 1 {background-color="#005573"}
+## About the guide
+
+# Why visualise data? {background-color="#005573"}
 
 ## Slide 1
+
+# Principles and elements of visualisation {background-color="#005573"}
+
+## Slide 1
+
+# Styling charts {background-color="#005573"}
+
+## Discussion: what's wrong with this chart?
+
+```{r}
+#| echo: false
+#| eval: true
+ggplot2::theme_set(ggplot2::theme_grey(base_size = 40))
+```
+
+```{r}
+#| echo: false
+#| eval: true
+library(ggplot2)
+library(dplyr)
+plot_data <- ToothGrowth %>%
+  mutate(dose = factor(dose)) %>%
+  group_by(dose, supp) %>%
+  summarise(len = mean(len)) %>%
+  ungroup()
+
+# Unstyled plot
+ggplot(
+  data = plot_data,
+  mapping = aes(x = len, y = dose, fill = supp)
+) +
+  geom_col(position = "dodge")
+```
+
+```{r}
+#| echo: false
+#| eval: true
+countdown::countdown(
+  minutes = 5,
+  color_border = "#005573",
+  color_text = "#005573",
+  color_running_text = "white",
+  color_running_background = "#005573",
+  color_finished_text = "#005573",
+  color_finished_background = "#d3a435",
+  top = 0,
+  margin = "0.7em",
+  font_size = "1.8em"
+)
+```
+
 
 # {RSSthemes} {background-color="#005573"}
 
@@ -38,9 +90,56 @@ Installing from GitHub:
 remotes::install_github("nrennie/RSSthemes")
 ```
 
-## Base R example
+Load package:
 
-## {ggplot2} example
+```{r}
+#| echo: true
+#| eval: true
+library(RSSthemes)
+```
+
+## Example: plotting with base R
+
+::: columns
+::: {.column}
+
+```{r}
+#| eval: true
+#| echo: true
+barplot(
+  height = table(mtcars$gear),
+  col = factor(
+    unique(mtcars$gear)
+    )
+)
+```
+
+:::
+
+::: {.column .fragment}
+
+```{r}
+#| eval: true
+#| echo: true
+set_rss_palette("signif_qual")
+barplot(
+  height = table(mtcars$gear),
+  col = factor(
+    unique(mtcars$gear)
+    )
+)
+```
+
+```{r}
+#| eval: true
+#| echo: false
+palette("default")
+```
+
+:::
+:::
+
+## Example: plotting with ggplot2}
 
 ::: columns
 ::: {.column}
@@ -68,18 +167,36 @@ install.packages("ggplot2")
 #| output-location: column
 library(ggplot2)
 g <- ggplot(data = mtcars) +
-  geom_bar(mapping = aes(x = cyl))
+  geom_bar(
+    mapping = aes(
+      x = cyl,
+      fill = factor(vs)
+      )
+    )
 g
+```
+
+## {ggplot2}: scales
+
+```{r}
+#| echo: true
+#| output-location: column
+#| code-line-numbers: "2"
+g +
+  scale_fill_rss_d("signif_qual")
+```
+
+## {ggplot2}: theme
+
+```{r}
+#| echo: true
+#| output-location: column
+#| code-line-numbers: "3"
+g +
+  scale_fill_rss_d("signif_qual") +
+  theme_significance()
 ```
 
 ## Links
 
-
 {{< fa brands github >}} [brtarran/rssdatavisguide](https://github.com/brtarran/rssdatavisguide)
-
-
-
-
-
-
-
