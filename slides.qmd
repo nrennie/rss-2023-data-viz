@@ -17,7 +17,7 @@ format:
 
 # Why visualise data? {background-color="#005573"}
 
-## Slide 1
+## Motivation
 
 # Principles and elements of visualisation {background-color="#005573"}
 
