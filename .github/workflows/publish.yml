@@ -8,10 +8,10 @@ name: Render and Publish
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
@@ -38,5 +38,3 @@ jobs:
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
