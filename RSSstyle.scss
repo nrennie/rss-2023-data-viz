@@ -63,6 +63,13 @@ section.has-dark-background a, section.has-dark-background a:hover {
   font-family: $font-family-sans-serif;
 }
 
+.reveal {
+    font-family: var(--r-main-font) !important;
+    font-size: var(--r-main-font-size) !important;
+    font-weight: normal !important;
+    color: var(--r-main-color) !important;
+}
+
 .reveal .footer {
   color: #005573;
   font-family: $font-family-sans-serif;
