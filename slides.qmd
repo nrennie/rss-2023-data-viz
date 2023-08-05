@@ -1,6 +1,6 @@
 ---
-title: "Data visualisation: new best practice guidance from RSS publications"
-author: "Andreas Krause, Nicola Rennie, & Brian Tarran"
+title: "Best Practices for Data Visualisation"
+author: "Andreas Krause, Nicola Rennie, and Brian Tarran"
 subtitle: "RSS International Conference 2023"
 editor: source
 format: 
@@ -8,32 +8,42 @@ format:
     theme: RSSstyle.scss
     self-contained: true
     logo: "logo.png"
-    footer: ""
+    footer: "[royal-statistical-society.github.io/datavisguide](https://royal-statistical-society.github.io/datavisguide/)"
 ---
 
-## About us
+## Welcome
+
+*Brian to add content*
 
 ## About the guide
+
+*Brian to add content*
 
 # Why visualise data? {background-color="#005573"}
 
 ## Motivation
 
+*Andreas to add content*
+
 # Principles and elements of visualisation {background-color="#005573"}
 
-## Slide 1
+## Elements of charts
+
+*Andreas to add content*
 
 # Styling charts {background-color="#005573"}
 
-## Discussion: what's wrong with this chart?
+## What's wrong with this chart?
 
 ```{r}
+#| label: set-theme
 #| echo: false
 #| eval: true
 ggplot2::theme_set(ggplot2::theme_grey(base_size = 40))
 ```
 
 ```{r}
+#| label: unstyled-example
 #| echo: false
 #| eval: true
 library(ggplot2)
@@ -52,25 +62,35 @@ ggplot(
   geom_col(position = "dodge")
 ```
 
-```{r}
-#| echo: false
-#| eval: true
-countdown::countdown(
-  minutes = 5,
-  color_border = "#005573",
-  color_text = "#005573",
-  color_running_text = "white",
-  color_running_background = "#005573",
-  color_finished_text = "#005573",
-  color_finished_background = "#d3a435",
-  top = 0,
-  margin = "0.7em",
-  font_size = "1.8em"
-)
-```
+## Colours
 
+*Nicola to add content*
 
-# {RSSthemes} {background-color="#005573"}
+## Annotations
+
+*Nicola to add content*
+
+## Fonts
+
+*Nicola to add content*
+
+## Alt Text
+
+[Alt text (AKA alternative text)]{.fragment} [is text that describes the visual aspects]{.fragment} [and purpose of an image – including charts.]{.fragment}
+
+[Though alt text has various uses, its primary purpose is to aid visually impaired users in interpreting images when the alt text is read aloud by screen readers.]{.fragment}
+
+## Alt Text
+
+![](images/alt.png){fig-align="center" fig-alt="Screenshot of Medium article on how to write alt text, which includes a chart type, type of data, reason for including chart, and link to data source" width=80%}
+
+Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Cesal)](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
+
+# Styling for RSS publications {background-color="#005573"}
+
+## Styling for Significance Magazine
+
+*Nicola to add content*
 
 ## {RSSthemes} R package
 
@@ -85,6 +105,7 @@ countdown::countdown(
 Installing from GitHub:
 
 ```{r}
+#| label: install-pkg
 #| echo: true
 #| eval: false
 remotes::install_github("nrennie/RSSthemes")
@@ -93,6 +114,7 @@ remotes::install_github("nrennie/RSSthemes")
 Load package:
 
 ```{r}
+#| label: load-pkg
 #| echo: true
 #| eval: true
 library(RSSthemes)
@@ -104,6 +126,7 @@ library(RSSthemes)
 ::: {.column}
 
 ```{r}
+#| label: base-barchart
 #| eval: true
 #| echo: true
 barplot(
@@ -112,6 +135,7 @@ barplot(
     unique(mtcars$gear)
     )
 )
+
 ```
 
 :::
@@ -119,6 +143,8 @@ barplot(
 ::: {.column .fragment}
 
 ```{r}
+#| label: base-barchart-styled
+#| code-line-numbers: "1"
 #| eval: true
 #| echo: true
 set_rss_palette("signif_qual")
@@ -131,6 +157,7 @@ barplot(
 ```
 
 ```{r}
+#| label: rest-palette
 #| eval: true
 #| echo: false
 palette("default")
@@ -147,6 +174,7 @@ palette("default")
 * {ggplot2} is an R package that provides functionality for drawing graphics.
 
 ```{r}
+#| label: install-ggplot
 #| eval: false
 #| echo: true
 install.packages("ggplot2")
@@ -163,6 +191,7 @@ install.packages("ggplot2")
 ## {ggplot2}: basic plot
 
 ```{r}
+#| label: ggplot-barchart
 #| echo: true
 #| output-location: column
 library(ggplot2)
@@ -179,6 +208,7 @@ g
 ## {ggplot2}: scales
 
 ```{r}
+#| label: ggplot-barchart-col
 #| echo: true
 #| output-location: column
 #| code-line-numbers: "2"
@@ -189,6 +219,7 @@ g +
 ## {ggplot2}: theme
 
 ```{r}
+#| label: ggplot-barchart-theme
 #| echo: true
 #| output-location: column
 #| code-line-numbers: "3"
@@ -197,6 +228,63 @@ g +
   theme_significance()
 ```
 
+# Contributing to the guide {background-color="#005573"}
+
+## Quarto
+
+::: columns
+::: {.column width=80%}
+
+[Quarto is an open-source scientific and technical publishing system]{.fragment} [that allows you to combine text, images, code, plots, and tables in a fully-reproducible document.]{.fragment} [Quarto has support for multiple languages including R, Python, Julia, and Observable.]{.fragment} [It works for a range of output formats such as PDFs, HTML documents, websites, presentations,...]{.fragment}
+
+:::
+
+::: {.column width=20%}
+
+![](images/quarto.png){fig-align="center" fig-alt="quarto hex sticker logo" width=80%}
+
+:::
+
+:::
+
+## GitHub
+
+The source code for the guide is stored on GitHub.
+
+If you want to contribute to the guide, the easiest way is via a GitHub pull request.
+
+GitHub link: [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
+
+Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide](https://royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide)
+
+## GitHub: Make a fork
+
+![](images/github1.png){fig-align="center" fig-alt="Screenshot of github repository with fork button highlighted" width=60%}
+
+## GitHub: Clone the repository
+
+![](images/github2.png){fig-align="center" fig-alt="Screenshot of github repository with clone button highlighted" width=60%}
+
+## GitHub: Make some changes and commit them
+
+*Nicola to add content*
+
+## GitHub: Create a pull request
+
+*Nicola to add content*
+
+## Need help with GitHub?
+
+Ask us!
+
+Conference session: [GitHub: Version control for research, teaching and industry, Thu 7th @ 11:40](https://virtual.oxfordabstracts.com/#/event/4019/session/66711)
+
+# Your turn! {background-color="#005573"}
+
+*All to add content*
+
 ## Links
 
-{{< fa brands github >}} [brtarran/rssdatavisguide](https://github.com/brtarran/rssdatavisguide)
+{{< fa globe >}} [royal-statistical-society.github.io/datavisguide](https://royal-statistical-society.github.io/datavisguide/)
+
+{{< fa brands github >}} [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
