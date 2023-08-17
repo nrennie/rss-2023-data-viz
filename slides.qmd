@@ -1,7 +1,7 @@
 ---
 title: "Best Practices for Data Visualisation"
 author: "Andreas Krause, Nicola Rennie, and Brian Tarran"
-subtitle: "RSS International Conference 2023"
+subtitle: "RSS Annual Conference, Harrogate UK 2023"
 editor: source
 format: 
   revealjs: 
@@ -23,9 +23,72 @@ format:
 
 ## Motivation
 
-*Andreas to add content*
+Learning from others: the good, the bad, and the ugly.
+
+Visualisations are encountered everywhere.
+
+
+## Case study 1: Football tickets ##
+
+![](images/Case study-stadium ticket 1.png){fig-alt="Stadium map"}
+
+- Hovering shows available tickets and prices.
+
+- Select Block A3. Note the positioning of pitch and block.
+
+
+## Case study 1: Football tickets cont'd ##
+
+Select your seat. 
+
+![](images/Case study-stadium ticket 2.png){fig-alt="Stadium map sector"}
+
+- The map is upside down now (pitch at bottom)!
+
+- Seats available are marked red!
+
+## Case study: stadium ticket ##
+
+Messages:
+
+- Do not confuse the users!
+
+- Use consistent elements (axes, orientations)
+
+- Use intuitive elements (here: colors)
+
+![](images/Case study-stadium ticket 1.png){fig-alt="Stadium map" width=40%}
+![](images/Case study-stadium ticket 2.png){fig-alt="Stadium map sector"width=50%}
+
+## Case study: blood sampling ##
+
+<!--# Number of blood samples at planned time points,
+shown on concentration-time curve.-->
+
+No of blood samples vs time on conc.-time curve.
+
+![](images/Case study-Conc time.png){fig-alt="conc-time profile"}
+
+Any issues?
+
+## Case study: impact factor trend ##
+
+![](images/Case study-impact factor trend.png){fig-alt="impact factor trend"}
+
+Any issues?
 
 # Principles and elements of visualisation {background-color="#005573"}
+
+## Guiding principle ##
+
+The visualisation enables distilling the information
+
+- Quickly
+
+- Accurately
+
+- Intuitively
+
 
 ## Elements of charts
 
