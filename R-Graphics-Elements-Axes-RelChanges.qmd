@@ -1,0 +1,68 @@
+```{r}
+#| echo: false
+
+# Naïve plot of y vs x. If there is no change (on average),
+# half the data are below the line of no change.
+# Asymmetric view, and it depends on y/x or x/y.
+
+set.seed(33838)
+x <- data.frame(
+  x = rlnorm(200, 2, 0.2),
+  y = rlnorm(200, 0.2, 0.75)
+)
+# Add an outlier manually.
+x <- rbind(x, data.frame(x = quantile(x$x, 0.8), y = max(x$y) * 1.5))
+
+# ---
+# Plotting.
+
+library(ggplot2)
+
+gg <- list() # Create a list of graphics objects.
+
+# Scatterplot of y vs x.
+gg[[1]] <- ggplot(x, aes(x = x, y = y)) +
+  geom_point() +
+  theme_bw()
+gg[[1]] <- gg[[1]] + geom_hline(yintercept = 1, color = "firebrick", linewidth = 2)
+gg[[1]] <- gg[[1]] + xlab("x-variable") + ylab("Fold-change")
+
+# Logarithmic axes, symmetric range (!):
+xbr <- c(1 / 10, 1 / 5, 1 / 2, 1, 2, 5, 10)
+gg[[2]] <- gg[[1]] + scale_y_continuous(
+  breaks = xbr, trans = "log10",
+  limits = max(abs(x$y))^c(-1, 1)
+)
+
+# Second axis:
+gg[[2]] <- gg[[2]] + scale_y_continuous(
+  breaks = xbr,
+  labels = paste(100 * xbr, "%", sep = ""),
+  trans = "log10",
+  limits = max(abs(x$y))^c(-1, 1),
+  sec.axis = sec_axis(
+    trans = ~ . * 1, breaks = xbr,
+    labels = ifelse(xbr < 1, paste("1/", 1 / xbr, sep = ""), xbr)
+  )
+)
+
+# ---
+# Univariate distribution (histogram).
+
+gg[[3]] <- ggplot(x, aes(x = y)) +
+  theme_bw() +
+  xlab("Fold-change")
+gg[[3]] <- gg[[3]] + geom_histogram(color = "firebrick", fill = "gray")
+
+# Symmetric range, log scale.
+gg[[4]] <- gg[[3]] + scale_x_continuous(
+  breaks = xbr,
+  labels = ifelse(xbr < 1, paste("1/", 1 / xbr), xbr),
+  trans = "log10",
+  limits = max(abs(x$x))^c(-1, 1)
+)
+
+library(cowplot)
+plot_grid(gg[[1]], gg[[2]], gg[[3]], gg[[4]], nrow=2)
+
+```

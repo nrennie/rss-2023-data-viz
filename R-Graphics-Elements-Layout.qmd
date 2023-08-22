@@ -1,0 +1,66 @@
+```{r}
+#| echo: false
+
+# ---
+# Data set creation.
+
+set.seed(93384)
+
+time <- c(0, 0.5, 1, 2, 4, 8, 12, 16, 24)
+n <- 32 # no of subjects
+
+data <- expand.grid(ID = 1:n, time = time)
+
+bw <- data.frame(
+  ID = sort(unique(data$ID)),
+  bw = rlnorm(n, log(75), sdlog = 0.25)
+)
+
+bw$bw.category <- cut(bw$bw,
+  breaks = quantile(bw$bw, c(0, 0.33, 0.66, 1)),
+  labels = paste(c("low", "medium", "high"), "body weight"),
+  include.lowest = TRUE
+)
+
+data <- merge(data, bw)
+
+data <- data[order(data$ID, data$time), ]
+
+# Simulate drug concentrations as a function of body weight.
+data$conc <- 100 / (data$bw^1.0) * exp(-0.085 * data$time) *
+  rlnorm(nrow(data), sdlog = 0.25) + # res. error
+  (data$ID - mean(data$ID)) / mean(data$ID) / 4 # r. eff
+
+# ---
+# Visualisation.
+library(ggplot2)
+
+gg <- list()
+
+data$ID <- factor(data$ID)
+
+# Figure with 3 rows, 1 column.
+gg[["3x1"]] <- ggplot(data, aes(x = time, y = conc, group = ID, color = ID)) +
+  geom_line()
+gg[["3x1"]] <- gg[["3x1"]] + scale_x_continuous(breaks = seq(0, 24, by = 4))
+gg[["3x1"]] <- gg[["3x1"]] + theme_bw() + 
+  xlab("time [h]") + 
+  ylab("drug concentration [ng/mL]")
+gg[["3x1"]] <- gg[["3x1"]] + facet_grid(bw.category ~ .)
+gg[["3x1"]] <- gg[["3x1"]] + theme(legend.position = "none")
+
+# Figure with 1 row, 3 columns.
+gg[["1x3"]] <- gg[["3x1"]] + facet_grid(. ~ bw.category)
+
+# Figure with 2x2 layout (use facet_wrap instead of facet_grid)
+gg[["2x2"]] <- gg[["3x1"]] + facet_wrap(bw.category~., nrow=2, ncol=2)
+
+# Add space to the rhs of the first figure for better separation in the cowplot.
+#gg[["3x1"]] <- gg[["3x1"]] + 
+ # theme(plot.margin = unit(c(0.5, 4, 0.5, 0.5), "lines"))
+
+# Both figures into a single output figure.
+library(cowplot)
+plot_grid(gg[["3x1"]], gg[["1x3"]], gg[["2x2"]], nrow=1)
+
+```

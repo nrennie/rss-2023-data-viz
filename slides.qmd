@@ -1,7 +1,7 @@
 ---
 title: "Best Practices for Data Visualisation"
 author: "Andreas Krause, Nicola Rennie, and Brian Tarran"
-subtitle: "RSS Annual Conference, Harrogate UK 2023"
+subtitle: "RSS International Conference, Harrogate UK 2023"
 editor: source
 format: 
   revealjs: 
@@ -23,76 +23,411 @@ format:
 
 ## Motivation
 
-Learning from others: the good, the bad, and the ugly.
+Visualisations are found everywhere.
 
-Visualisations are encountered everywhere.
+They are the key medium for transporting a message.
 
+Some are better than others.
 
-## Case study 1: Football tickets ##
+There are largely no standards.
 
-![](images/Case study-stadium ticket 1.png){fig-alt="Stadium map"}
+## Motivation: Anchor the message
 
-- Hovering shows available tickets and prices.
+-   Grab attention
+-   Improve access to information (over text)
+-   Increase precision (over text)
+-   Bolster credibility: see yourself
+-   Summarise content
 
-- Select Block A3. Note the positioning of pitch and block.
+## Napoleon's March on Moscow
 
+::: {style="font-size: 70%; line-height: 80%"}
+![](images/Motivation-Minard.png){fig-alt="Napoleon March on Moscow"}
 
-## Case study 1: Football tickets cont'd ##
+Variables: Lat/lon of army position, direction, army size, geography, temperature.
+:::
 
-Select your seat. 
+::: {style="font-size: 45%; line-height: 20%"}
+C Minard (1869): The successive losses in men of the French Army in the Russian campaign 1812-1813. Source: Wikimedia Commons.
+:::
 
-![](images/Case study-stadium ticket 2.png){fig-alt="Stadium map sector"}
+## The Art of Visualisation (1)
 
-- The map is upside down now (pitch at bottom)!
+Gauge the sizes, determine the largest piece
 
-- Seats available are marked red!
+![](images/Comparison-01.png){fig-alt="Comparison 01"}
 
-## Case study: stadium ticket ##
+## The Art of Visualisation (2)
 
-Messages:
+The number of pixels per pie depends on its position
 
-- Do not confuse the users!
+![](images/Comparison-02.png){fig-alt="Comparison 02"}
 
-- Use consistent elements (axes, orientations)
+## The Art of Visualisation (3)
 
-- Use intuitive elements (here: colors)
+Sorting the bars by height is easy
 
-![](images/Case study-stadium ticket 1.png){fig-alt="Stadium map" width=40%}
-![](images/Case study-stadium ticket 2.png){fig-alt="Stadium map sector"width=50%}
+![](images/Comparison-03.png){fig-alt="Comparison 03"}
 
-## Case study: blood sampling ##
+## The Art of Visualisation (4)
 
-<!--# Number of blood samples at planned time points,
-shown on concentration-time curve.-->
+... and arguably even easier with horizontal layout
 
-No of blood samples vs time on conc.-time curve.
+![](images/Comparison-04.png){fig-alt="Comparison 04"}
 
-![](images/Case study-Conc time.png){fig-alt="conc-time profile"}
+## The Art of Visualisation (5)
 
-Any issues?
+A single pixel carries the same information as a large bar
 
-## Case study: impact factor trend ##
+![](images/Comparison-05.png){fig-alt="Comparison 05"}
 
-![](images/Case study-impact factor trend.png){fig-alt="impact factor trend"}
+## The Art of Visualisation (6)
 
-Any issues?
+Faint gridlines help reading off values precisely
+
+![](images/Comparison-06.png){fig-alt="Comparison 06"}
+
+## The Art of Visualisation (7)
+
+There are options in designing a visualisation!
+
+![](images/Comparison-07.png){fig-alt="Comparison 07"}
+
+<!-- ----- Section break ----- -->
 
 # Principles and elements of visualisation {background-color="#005573"}
 
-## Guiding principle ##
+## Purpose
 
-The visualisation enables distilling the information
+Data visualisations must serve a purpose.
 
-- Quickly
+Frequent aim: comparison.
 
-- Accurately
+Ask yourself:
 
-- Intuitively
+-   What is the purpose?
+-   Does the visualisation support the purpose?
+-   Quickly, Accurately, and Intuitively?
+
+## Elements of Charts
+
+::: columns
+::: {.column width="33%"}
+-   Layout
+-   Aspect ratio
+-   Lines
+-   Points
+:::
+
+::: {.column width="33%"}
+-   Colours
+-   Axes
+-   Symbols
+-   Legends
+:::
+
+::: {.column width="33%"}
+-   Orientation
+-   Auxiliary elements
+-   Dimensionality
+:::
+:::
+
+Note the defaults: the boxplot function in R has 27 of them.
+
+## Layout
+
+-   Which axes are to be compared?
+
+```{=html}
+<!-- 
+  Figure from file:
+  { ![](images/principles-layout.png){fig-alt="Layout"} } 
+-->
+```
+{{< include R-Graphics-Elements-Layout.qmd >}}
+
+## Lines
+
+-   Lines introduce an order
+-   No order, no lines
+
+Line types: map style elements to order
+
+-   Line thickness
+-   Dash density for dashed lines
+-   Brightness (black to white)
+
+## Points
+
+If data points overlay (which they generally do)
+
+-   Open circles still allow discerning data points
+-   Smaller dots can be considered
+
+If data points overlay perfectly (example: integer data)
+
+-   Consider jittering
+
+## Colours
+
+-   Colours should serve a purpose: discerning groups of data
+
+Shades of gray
+
+-   Have a natural visual hierarchy
+-   Show varying quantities better than color
+-   Provide an easily comprehended order to the data measures
+-   This is the key
+
+::: {style="text-align: right"}
+Edward Tufte (2001), p. 154
+:::
+
+## Axes
+
+-   Should generally start at 0
+-   Should not have negative numbers with none in the data
+
+{{< include R-Graphics-Elements-Axes.qmd >}}
+
+```{=html}
+<!-- 
+  Figure from file:
+  { ![](images/principles-axes.png){fig-alt="Axis limits"} } 
+-->
+```
+## Axes (2): Relative changes
+
+::: columns
+::: {.column width="40%"}
+-   Log-axes for symmetry
+-   Tickmarks 1/4 and 4
+-   Line at "no change"
+-   Faint gray grid
+:::
+
+::: {.column width="60%"}
+{{< include R-Graphics-Elements-Axes-RelChanges.qmd >}}
+:::
+:::
+
+```{=html}
+<!-- 
+  Figure from file:
+  ![](images/principles-log.png){fig-alt="Logarithmic axes"}
+-->
+```
+## Aspect ratio
+
+::: {style="font-size: 100%; line-height: 80%"}
+-   Number of pixels allocated to 1 measurement unit in y vs x
+-   Comparing x and y (example: predicted vs observed data)
+-   Identical axis limits, aspect ratio = 1 -\> square figure
+
+{{< include R-Graphics-Elements-AspectRatio.qmd >}}
+:::
+
+<!-- To Do: reduce white space between text and figure -->
+
+```{=html}
+<!-- 
+  Figure from file:
+  { ![](images/principles-aspect-ratio.png){fig-alt="Aspect ratio"} }
+-->
+```
+## Symbols
+
+Should be intuitive:
+
+-   Good: +, bad:-, neutral: 0
+-   Consider using letters (example: "L"ow, "M"edium, "H"igh)
+
+Ideal case: Single look at the legend to memorize the mapping
+
+Not intuitive: triangles, circles, squares -\> repeated looks
+
+::: {style="font-size: 70%; line-height: 80%; text-align:right"}
+(unless the order - number of vertices - carries a meaning)
+:::
+
+## Legends
+
+-   Should not use up valuable space for data
+-   May be integrated into the figure
+
+{{< include R-Graphics-Elements-Legends.qmd >}}
+
+```{=html}
+<!--
+  Figure from file:
+  ![](images/principles-legends.png){fig-alt="Legends"}
+  -->
+```
+## Orientation
+
+-   Order: y-axis from low to high, x-axis from left to right
+-   Time flows from left to right (past to future)
+-   Longer labels best at the y-axis, horizontally
+
+{{< include R-Graphics-Elements-Orientation.qmd >}}
+
+```{=html}
+<!-- 
+  Figure from file:
+  ![](images/principles-orientation.png){fig-alt="Orientation"}
+-->
+```
+## Auxiliary elements
+
+-   Tufte: avoid "chart junk", elements without information
+-     My example: the gray background in ggplot2 figures
+-   No relevant contribution: remove (repeated identical axes)
+-   Helpful lines (examples: y=0, faint gray lines)
+-   Smoother to support trend identification
+-   Confidence band only if relevant (default with R loess)
+
+## Auxiliary elements: change
+
+-   Symmetric y-axis, line at y=0 -\> focus on data
+
+{{< include R-Graphics-Elements-Auxiliary.qmd >}}
+
+```{=html}
+<!-- 
+  Figure from file:
+  ![](images/principles-auxiliary.png){fig-alt="Orientation"}
+-->
+```
+## Dimensionality
+
+-   Accurate interpretation is not straightforward. Don't.
+
+![](images/principles-3d.png){fig-alt="3D"}
+
+## Elements of Tables
+
+-   Layout
+-   Digits
+-   Alignment
+-   Multiple numbers per cell
+-   Orientation
+-   Fonts
+-   Colours
+
+## Tables: Layout
+
+-   Choose rows and columns consciously
+-   Numbers are easier to compare vertically than horizontally
+-   Generally: variables in columns, observations in rows
+
+::: columns
+::: column
+
+| **Name** | **Age** | **Weight**      |
+|:---------|--------:|----------------:|
+| Alex     | 55      | 123.45          |
+| Sandy    | 33      |  77.07          |
+
+:::
+
+::: column
+| **Name**          | Alex   | Sandy |
+|:------------------|-------:|------:|
+| **Age**           | 55     | 33    |
+| **Weight**        | 123.45 | 77.07 |
+
+:::
+
+::::
+
+## Tables: Alignment
+
+Generally helpful:
+
+-   Decimal points aligned vertically (monospace fonts?)
+-   Right adjustment (larger numbers "stick out")
+-   Difficult if numbers are very different (e.g., 953 and 0.07)
+
+::: columns
+::: column
+
+| **Name** | **Age** | **Weight**      |
+|:---------|--------:|----------------:|
+| Alex     | 55      | 123.45          |
+| Sandy    | 33      |  77.07          |
+
+:::
+
+::: column
+| **Name**          | Alex   | Sandy |
+|:------------------|-------:|------:|
+| **Age**           | 55.00  | 33.00 |
+| **Weight**        | 123.45 | 77.07 |
+
+:::
+
+::::
+
+## Tables: Digits
+
+-   Unnecessary precision is to be avoided
+-   R: Digits argument
+
+```{r}
+#| echo: true
+ print(1:7 + 1/(1:7), digits=2)
+ print(1:7 + 1/(1:7), digits=3)
+ format(10+1:7 + 1/(1:7), digits=4)
+ format(c(1234, 1/1234), digits=3)
+```
+
+## Tables: Multiple numbers per cell
+
+-   Hard to read, better separate columns
+
+::: columns
+::: column
+
+| **Variable** | **Mean (%CV)** |
+|:-------------|--------------:|
+| Age          | 55 (9)        |
+| Weight       | 88 (25)       |
+
+:::
+
+::: column
+| **Variable** | **Mean**    | **%CV** |
+|:----------|---------------:|--------:|
+| Age       | 55             |   9     |
+| Weight    | 88             |  25     |
+
+:::
+
+::::
+
+## Tables: Orientation
+
+-   Single landscape pages are a pain
+-   Consider splitting the table into two
+
+## Tables: Fonts and colours
+
+-   Some fonts are easier to read than others
+-   These are usually the standard fonts
+-   Use of different fonts and colors only for a purpose
+-   Example: extreme values in boldface or red
 
 
-## Elements of charts
+## Recap: Creating Charts and Tables
 
-*Andreas to add content*
+-   Actively designing charts is recommended
+-   What is the question?
+-   Does the visual enable answering the question efficiently?
+-   Good visualisations increase P(paper gets accepted)
+-   Visual abstracts come into fashion with journals
+
+<!-- ---------- HANDOVER TO NICOLA ---------- -->
 
 # Styling charts {background-color="#005573"}
 
@@ -139,13 +474,13 @@ ggplot(
 
 ## Alt Text
 
-[Alt text (AKA alternative text)]{.fragment} [is text that describes the visual aspects]{.fragment} [and purpose of an image – including charts.]{.fragment}
+[Alt text (AKA alternative text)]{.fragment} [is text that describes the visual aspects]{.fragment} [and purpose of an image -- including charts.]{.fragment}
 
 [Though alt text has various uses, its primary purpose is to aid visually impaired users in interpreting images when the alt text is read aloud by screen readers.]{.fragment}
 
 ## Alt Text
 
-![](images/alt.png){fig-align="center" fig-alt="Screenshot of Medium article on how to write alt text, which includes a chart type, type of data, reason for including chart, and link to data source" width=80%}
+![](images/alt.png){fig-align="center" fig-alt="Screenshot of Medium article on how to write alt text, which includes a chart type, type of data, reason for including chart, and link to data source" width="80%"}
 
 Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Cesal)](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81)
 
@@ -157,11 +492,11 @@ Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Ces
 
 ## {RSSthemes} R package
 
-* Colour palettes
+-   Colour palettes
 
-* Base R helper functions
+-   Base R helper functions
 
-* {ggplot2} helper functions
+-   {ggplot2} helper functions
 
 ## Installation
 
@@ -186,8 +521,7 @@ library(RSSthemes)
 ## Example: plotting with base R
 
 ::: columns
-::: {.column}
-
+::: column
 ```{r}
 #| label: base-barchart
 #| eval: true
@@ -200,11 +534,9 @@ barplot(
 )
 
 ```
-
 :::
 
 ::: {.column .fragment}
-
 ```{r}
 #| label: base-barchart-styled
 #| code-line-numbers: "1"
@@ -225,16 +557,14 @@ barplot(
 #| echo: false
 palette("default")
 ```
-
 :::
 :::
 
 ## Example: plotting with ggplot2}
 
 ::: columns
-::: {.column}
-
-* {ggplot2} is an R package that provides functionality for drawing graphics.
+::: column
+-   {ggplot2} is an R package that provides functionality for drawing graphics.
 
 ```{r}
 #| label: install-ggplot
@@ -242,12 +572,10 @@ palette("default")
 #| echo: true
 install.packages("ggplot2")
 ```
-
 :::
 
-::: {.column}
-
-![](images/ggplot2.png){fig-align="center" fig-alt="ggplot2 hex sticker logo" width=60%}
+::: column
+![](images/ggplot2.png){fig-align="center" fig-alt="ggplot2 hex sticker logo" width="60%"}
 :::
 :::
 
@@ -296,18 +624,13 @@ g +
 ## Quarto
 
 ::: columns
-::: {.column width=80%}
-
+::: {.column width="80%"}
 [Quarto is an open-source scientific and technical publishing system]{.fragment} [that allows you to combine text, images, code, plots, and tables in a fully-reproducible document.]{.fragment} [Quarto has support for multiple languages including R, Python, Julia, and Observable.]{.fragment} [It works for a range of output formats such as PDFs, HTML documents, websites, presentations,...]{.fragment}
-
 :::
 
-::: {.column width=20%}
-
-![](images/quarto.png){fig-align="center" fig-alt="quarto hex sticker logo" width=80%}
-
+::: {.column width="20%"}
+![](images/quarto.png){fig-align="center" fig-alt="quarto hex sticker logo" width="80%"}
 :::
-
 :::
 
 ## GitHub
@@ -322,11 +645,11 @@ Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#
 
 ## GitHub: Make a fork
 
-![](images/github1.png){fig-align="center" fig-alt="Screenshot of github repository with fork button highlighted" width=60%}
+![](images/github1.png){fig-align="center" fig-alt="Screenshot of github repository with fork button highlighted" width="60%"}
 
 ## GitHub: Clone the repository
 
-![](images/github2.png){fig-align="center" fig-alt="Screenshot of github repository with clone button highlighted" width=60%}
+![](images/github2.png){fig-align="center" fig-alt="Screenshot of github repository with clone button highlighted" width="60%"}
 
 ## GitHub: Make some changes and commit them
 
@@ -340,7 +663,7 @@ Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#
 
 Ask us!
 
-Conference session: [GitHub: Version control for research, teaching and industry, Thu 7th @ 11:40](https://virtual.oxfordabstracts.com/#/event/4019/session/66711)
+Conference session: [GitHub: Version control for research, teaching and industry, Thu 7th \@ 11:40](https://virtual.oxfordabstracts.com/#/event/4019/session/66711)
 
 # Your turn! {background-color="#005573"}
 
@@ -351,3 +674,55 @@ Conference session: [GitHub: Version control for research, teaching and industry
 {{< fa globe >}} [royal-statistical-society.github.io/datavisguide](https://royal-statistical-society.github.io/datavisguide/)
 
 {{< fa brands github >}} [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
+
+# Backup Slides {background-color="#005573"}
+
+## Case study: Football tickets
+
+![](images/Case%20study-stadium%20ticket%201.png){fig-alt="Stadium map"}
+
+-   Hovering shows available tickets and prices.
+
+-   Select Block A3. Note the positioning of pitch and block.
+
+## Case study: Football tickets cont'd
+
+Select your seat.
+
+![](images/Case%20study-stadium%20ticket%202.png){fig-alt="Stadium map sector"}
+
+-   The map is upside down now (pitch at bottom)!
+
+-   Seats available are marked red!
+
+## Case study: Football tickets cont'd
+
+Messages:
+
+-   Do not confuse the users!
+
+-   Use consistent elements (axes, orientations)
+
+-   Use intuitive elements (here: colors)
+
+![](images/Case%20study-stadium%20ticket%201.png){fig-alt="Stadium map" width="40%"} ![](images/Case%20study-stadium%20ticket%202.png){fig-alt="Stadium map sector" width="50%"}
+
+## Case Study: Blood Sampling
+
+```{=html}
+<!--# Number of blood samples at planned time points,
+shown on concentration-time curve.-->
+```
+No of blood samples vs time on conc.-time curve.
+
+![](images/Case%20study-Conc%20time.png){fig-alt="conc-time profile"}
+
+Any issues?
+
+## Case study: impact factor trend
+
+![](images/Case%20study-impact%20factor%20trend.png){fig-alt="impact factor trend"}
+
+Any issues?
+
+## The End.
