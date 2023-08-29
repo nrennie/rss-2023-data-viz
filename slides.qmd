@@ -580,7 +580,16 @@ Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Ces
 
 ## Installation
 
-Installing from GitHub:
+Install from CRAN:
+
+```{r}
+#| label: install-pkg-cran
+#| echo: true
+#| eval: false
+install.packages("RSSthemes")
+```
+
+Installing from GitHub (development version):
 
 ```{r}
 #| label: install-pkg
@@ -588,6 +597,8 @@ Installing from GitHub:
 #| eval: false
 remotes::install_github("nrennie/RSSthemes")
 ```
+
+. . .
 
 Load package:
 
