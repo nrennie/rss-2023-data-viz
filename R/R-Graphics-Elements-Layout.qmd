@@ -1,5 +1,7 @@
 ```{r}
+#| fig-align: center
 #| echo: false
+#| label: layouts
 
 # ---
 # Data set creation.

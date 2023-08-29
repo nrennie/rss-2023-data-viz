@@ -26,7 +26,7 @@ jobs:
           
       - name: Install dependencies
         run: |
-          install.packages(c("ggplot2", "remotes", "dplyr", "countdown", "rmarkdown"))
+          install.packages(c("ggplot2", "cowplot", "remotes", "dplyr", "countdown", "rmarkdown"))
         shell: Rscript {0}
         
       - name: Install RSSthemes

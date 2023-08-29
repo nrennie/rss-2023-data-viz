@@ -1,7 +1,9 @@
 ```{r}
+#| fig-align: center
 #| echo: false
+#| label: rel-changes
 
-# Naïve plot of y vs x. If there is no change (on average),
+# Na?ve plot of y vs x. If there is no change (on average),
 # half the data are below the line of no change.
 # Asymmetric view, and it depends on y/x or x/y.
 
