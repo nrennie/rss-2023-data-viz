@@ -44,7 +44,7 @@ There are largely no standards.
 ## Napoleon's March on Moscow
 
 ::: {style="font-size: 70%; line-height: 80%"}
-![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow"width="80%"}
+![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow"width="90%"}
 
 Variables: Lat/lon of army position, direction, army size, geography, temperature.
 :::
@@ -57,7 +57,7 @@ C Minard (1869): The successive losses in men of the French Army in the Russian 
 
 Gauge the sizes, determine the largest piece
 
-![](images/Comparison-01.png){fig-align="center" fig-alt="Comparison 01" width="80%"}
+![](images/Comparison-01.png){fig-align="center" fig-alt="Comparison 01" width="60%"}
 
 ## The Art of Visualisation (2)
 
@@ -465,13 +465,19 @@ ggplot(
 
 ## Colours
 
-Why use colour?
+Why use colours in data visualisation?
+
+* Colours can highlight or emphasise parts of your data.
+
+* Not always the most effective for e.g. communicating differences between variables.
 
 ## Colours: types of palette
 
 ![](images/styling-palettes.png){fig-align="center" fig-alt="Examples of sequential, diverging, and qualitative palettes" width="70%"}
 
 ## Colours: don't rely on colour
+
+![](images/styling-shapes.png){fig-align="center" fig-alt="A 2x2 grid of bar charts and approximately how they may appear to those with different types of colour deficiency" width="70%"}
 
 ## Colours: check for accessibility
 
@@ -483,7 +489,18 @@ Why use colour?
 
 ## Colours: check for accessibility
 
+::: columns
+::: {.column width="30%"}
+![](images/styling-intro.png){fig-align="center" fig-alt="A nicely styled bar charts of guinea pig tooth growth" width="100%"}
+:::
+
+::: {.column width="70%" .fragment}
 ![](images/styling-colours.png){fig-align="center" fig-alt="A 2x2 grid of bar charts and approximately how they may appear to those with different types of colour deficiency" width="70%"}
+:::
+
+:::
+
+
 
 ## Annotations
 
@@ -586,7 +603,6 @@ library(RSSthemes)
 ```{r}
 #| eval: true
 #| echo: false
-par(cex = 10)
 ```
 
 ::: columns
@@ -599,9 +615,10 @@ barplot(
   height = table(mtcars$gear),
   col = factor(
     unique(mtcars$gear)
-    )
+    ),
+  cex.axis = 4, cex.names = 4
 )
-
+ 
 ```
 :::
 
@@ -616,7 +633,8 @@ barplot(
   height = table(mtcars$gear),
   col = factor(
     unique(mtcars$gear)
-    )
+    ),
+  cex.axis = 4, cex.names = 4
 )
 ```
 
@@ -682,10 +700,14 @@ g +
 #| label: ggplot-barchart-theme
 #| echo: true
 #| output-location: column
-#| code-line-numbers: "3"
+#| fig-height: 6
+#| code-line-numbers: "5"
 g +
   scale_fill_rss_d("signif_qual") +
-  theme_significance()
+  labs(
+    title = "Title",
+    subtitle = "Subtitle") +
+  theme_significance(base_size = 36)
 ```
 
 
