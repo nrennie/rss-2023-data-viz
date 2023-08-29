@@ -1,0 +1,43 @@
+```{r}
+#| echo: false
+
+library(ggplot2)
+plot_data <- data.frame(
+  type = factor(
+    c("Our product", "Competitor"),
+    levels = c("Our product", "Competitor")
+  ),
+  value = c(220, 210)
+)
+
+# Original plot
+gg1 <- ggplot(plot_data) +
+  geom_col(
+    mapping = aes(x = type, y = value),
+    fill = "lightblue",
+    colour = "black"
+  ) +
+  scale_y_continuous(breaks = seq(0, 220, by = 20), expand = c(0, 0)) +
+  labs(x = "", y = "") +
+  theme_minimal()
+
+# Offset the y axis
+offset <- 208
+gg2 <- ggplot(plot_data) +
+  geom_col(
+    mapping = aes(x = type, y = value - offset),
+    fill = "lightblue",
+    colour = "black"
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 14, by = 2),
+    labels = seq(0 + offset, 14 + offset, by = 2),
+    expand = c(0, 0)
+  ) +
+  labs(x = "", y = "") +
+  theme_minimal()
+
+library(cowplot)
+plot_grid(gg1, gg2, nrow = 1)
+
+```

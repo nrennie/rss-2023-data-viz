@@ -1,0 +1,24 @@
+```{r}
+#| echo: false
+
+# Store figures into a list.
+gg.list <- list()
+
+library(ggplot2)
+
+x <- mpg # miles per gallon data set.
+x$car <- paste(x$manufacturer, x$model)
+
+gg <- ggplot(x, aes(x = car, y = hwy, group = car))
+gg <- gg + geom_boxplot() + theme_bw() + xlab("Miles per gallon (highway)")
+gg.list[["vertical orientation"]] <- gg
+
+gg.list[["horizontal orientation"]] <- gg + coord_flip()
+
+# ---
+# Both figures into a single output figure.
+
+library(cowplot)
+plot_grid(gg.list[[1]], gg.list[[2]], rel_widths = c(2, 2.5))
+
+```

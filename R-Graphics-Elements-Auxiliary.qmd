@@ -1,0 +1,64 @@
+```{r}
+#| label: AuxElementsFromFile
+#| echo: false
+
+# Function for data set generation.
+make.data <- function(
+    x = c(0, 0.5, 1, 2, 4, 8, 12, 16, 24),
+    y = exp(-0.2 * x) - exp(-0.21 * x),
+    sd = 0.25, # std dev of y
+    seed = 4384590,
+    n = 50) {
+  # Setting the random number seed for reproducibility.
+  set.seed(seed)
+  # Creation of x- and y-variables.
+  x2 <- rep(x, n)
+  y2 <- NULL
+  for (i in 1:n) {
+    y2 <- c(y2, y * (2 * (n / 4 - i)) + rlnorm(length(y), sd = sd))
+  }
+
+  # Creation of an identifier for each profile.
+  ID <- factor(rep(1:n, rep(length(y), n)))
+
+  # Composition of the data set.
+  df <- data.frame(PD = 100 * y2, time = x, ID = ID)
+
+  # Addition of a baseline variable.
+  BL <- df[df$time == 0, c("ID", "PD")]
+  names(BL) <- c("ID", "BL")
+  df <- merge(df, BL)
+
+  # Addition of change from baseline.
+  df$Change <- df$PD - df$BL
+
+  # Definition of treatment.
+  df$trt <- ifelse(df$BL > mean(df$BL), "active", " placebo")
+
+  return(df)
+}
+
+# Generate the data.
+x <- make.data()
+
+# ---
+# Figures.
+
+library(ggplot2)
+gg <- ggplot(x, aes(x = time, y = Change, group = ID, color = ID))
+gg <- gg + theme_bw()
+gg <- gg + xlab("Time [h]") + ylab("Change from baseline")
+gg <- gg + geom_line(linewidth = 1.1) + theme(legend.position = "none")
+gg <- gg + facet_grid(. ~ trt)
+
+# Addition of an auxiliary line at y=0.
+gg2 <- gg + geom_hline(yintercept = 0, linewidth = 1.2)
+
+# Symmetric y-axis limits.
+gg3 <- gg2 + ylim(c(-1, 1) * max(abs(x$Change)))
+
+# Arranging all plots into one figure.
+library(cowplot)
+plot_grid(gg, gg2, gg3, nrow = 1)
+
+```
