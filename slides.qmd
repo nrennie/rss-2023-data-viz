@@ -1,12 +1,14 @@
 ---
 title: "Best Practices for Data Visualisation"
 author: "Andreas Krause, Nicola Rennie, and Brian Tarran"
-subtitle: "RSS International Conference<br>Harrogate UK 2023"
+subtitle: "RSS International Conference 2023<br><small>Harrogate, UK</small>"
 editor: source
+fig-align: center
 format: 
   revealjs: 
     theme: RSSstyle.scss
     self-contained: true
+    slide-number: true
     logo: "logo.png"
     footer: "[royal-statistical-society.github.io/datavisguide](https://royal-statistical-society.github.io/datavisguide/)"
 ---
@@ -42,7 +44,7 @@ There are largely no standards.
 ## Napoleon's March on Moscow
 
 ::: {style="font-size: 70%; line-height: 80%"}
-![](images/Motivation-Minard.png){fig-alt="Napoleon March on Moscow"}
+![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow"}
 
 Variables: Lat/lon of army position, direction, army size, geography, temperature.
 :::
@@ -55,43 +57,43 @@ C Minard (1869): The successive losses in men of the French Army in the Russian 
 
 Gauge the sizes, determine the largest piece
 
-![](images/Comparison-01.png){fig-alt="Comparison 01"}
+![](images/Comparison-01.png){fig-align="center" fig-alt="Comparison 01" width="90%"}
 
 ## The Art of Visualisation (2)
 
 The number of pixels per pie depends on its position
 
-![](images/Comparison-02.png){fig-alt="Comparison 02"}
+![](images/Comparison-02.png){fig-align="center" fig-alt="Comparison 02"}
 
 ## The Art of Visualisation (3)
 
 Sorting the bars by height is easy
 
-![](images/Comparison-03.png){fig-alt="Comparison 03"}
+![](images/Comparison-03.png){fig-align="center" fig-alt="Comparison 03"}
 
 ## The Art of Visualisation (4)
 
 ... and arguably even easier with horizontal layout
 
-![](images/Comparison-04.png){fig-alt="Comparison 04"}
+![](images/Comparison-04.png){fig-align="center" fig-alt="Comparison 04"}
 
 ## The Art of Visualisation (5)
 
 A single pixel carries the same information as a large bar
 
-![](images/Comparison-05.png){fig-alt="Comparison 05"}
+![](images/Comparison-05.png){fig-align="center" fig-alt="Comparison 05"}
 
 ## The Art of Visualisation (6)
 
 Faint gridlines help reading off values precisely
 
-![](images/Comparison-06.png){fig-alt="Comparison 06"}
+![](images/Comparison-06.png){fig-align="center" fig-alt="Comparison 06"}
 
 ## The Art of Visualisation (7)
 
 There are options in designing a visualisation!
 
-![](images/Comparison-07.png){fig-alt="Comparison 07"}
+![](images/Comparison-07.png){fig-align="center" fig-alt="Comparison 07"}
 
 <!-- ----- Section break ----- -->
 
@@ -180,7 +182,7 @@ Shades of gray
 -   Provide an easily comprehended order to the data measures
 -   This is the key
 
-::: {style="text-align: right"}
+::: {.right}
 Edward Tufte (2001), p. 154
 :::
 
@@ -220,11 +222,11 @@ Edward Tufte (2001), p. 154
 ```
 ## Aspect ratio
 
-::: {style="font-size: 100%; line-height: 80%"}
 -   Number of pixels allocated to 1 measurement unit in y vs x
 -   Comparing x and y (example: predicted vs observed data)
 -   Identical axis limits, aspect ratio = 1 -\> square figure
 
+::: {style="margin-top: -20"}
 {{< include R/R-Graphics-Elements-AspectRatio.qmd >}}
 :::
 
@@ -281,7 +283,7 @@ Not intuitive: triangles, circles, squares -\> repeated looks
 ## Auxiliary elements
 
 -   Tufte: avoid "chart junk", elements without information
--     My example: the gray background in ggplot2 figures
+-   My example: the gray background in ggplot2 figures
 -   No relevant contribution: remove (repeated identical axes)
 -   Helpful lines (examples: y=0, faint gray lines)
 -   Smoother to support trend identification
@@ -303,7 +305,7 @@ Not intuitive: triangles, circles, squares -\> repeated looks
 
 -   Accurate interpretation is not straightforward. Don't.
 
-![](images/principles-3d.png){fig-alt="3D"}
+![](images/principles-3d.png){fig-align="center" fig-alt="3D"}
 
 ## Elements of Tables
 
@@ -376,10 +378,10 @@ Generally helpful:
 
 ```{r}
 #| echo: true
- print(1:7 + 1/(1:7), digits=2)
- print(1:7 + 1/(1:7), digits=3)
- format(10+1:7 + 1/(1:7), digits=4)
- format(c(1234, 1/1234), digits=3)
+print(1:7 + 1/(1:7), digits=2)
+print(1:7 + 1/(1:7), digits=3)
+format(10+1:7 + 1/(1:7), digits=4)
+format(c(1234, 1/1234), digits=3)
 ```
 
 ## Tables: Multiple numbers per cell
@@ -675,11 +677,11 @@ Conference session: [GitHub: Version control for research, teaching and industry
 
 {{< fa brands github >}} [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
 
-# Backup Slides {background-color="#005573"}
+# Additional slides {background-color="#005573"}
 
 ## Case study: Football tickets
 
-![](images/Case%20study-stadium%20ticket%201.png){fig-alt="Stadium map"}
+![](images/Case%20study-stadium%20ticket%201.png){fig-align="center" fig-alt="Stadium map"}
 
 -   Hovering shows available tickets and prices.
 
@@ -689,7 +691,7 @@ Conference session: [GitHub: Version control for research, teaching and industry
 
 Select your seat.
 
-![](images/Case%20study-stadium%20ticket%202.png){fig-alt="Stadium map sector"}
+![](images/Case%20study-stadium%20ticket%202.png){fig-align="center" fig-alt="Stadium map sector"}
 
 -   The map is upside down now (pitch at bottom)!
 
@@ -705,7 +707,7 @@ Messages:
 
 -   Use intuitive elements (here: colors)
 
-![](images/Case%20study-stadium%20ticket%201.png){fig-alt="Stadium map" width="40%"} ![](images/Case%20study-stadium%20ticket%202.png){fig-alt="Stadium map sector" width="50%"}
+![](images/Case%20study-stadium%20ticket%201.png){fig-align="center" fig-alt="Stadium map" width="40%"} ![](images/Case%20study-stadium%20ticket%202.png){fig-align="center" fig-alt="Stadium map sector" width="50%"}
 
 ## Case Study: Blood Sampling
 
@@ -715,14 +717,12 @@ shown on concentration-time curve.-->
 ```
 No of blood samples vs time on conc.-time curve.
 
-![](images/Case%20study-Conc%20time.png){fig-alt="conc-time profile"}
+![](images/Case%20study-Conc%20time.png){fig-align="center" fig-alt="conc-time profile"}
 
 Any issues?
 
 ## Case study: impact factor trend
 
-![](images/Case%20study-impact%20factor%20trend.png){fig-alt="impact factor trend"}
+![](images/Case%20study-impact%20factor%20trend.png){fig-align="center" fig-alt="impact factor trend"}
 
 Any issues?
-
-## The End.

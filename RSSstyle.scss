@@ -5,7 +5,7 @@ $presentation-h1-font-size: 2.6em;
 $presentation-h2-font-size: 1.7em;
 $presentation-h3-font-size: 1.4em;
 $presentation-h4-font-size: 1.1em;
-$presentation-font-size-root: 40px;
+$presentation-font-size-root: 36px;
 $presentation-line-height: 1.5em;
 
 // font colour
@@ -42,7 +42,7 @@ $body-bg: #ffffff;
 }
 
 h2 {
-  padding-bottom: 35px;
+  padding-bottom: 20px;
 }
 
 .author {
@@ -76,12 +76,19 @@ section.has-dark-background a, section.has-dark-background a:hover {
   padding-bottom: 25px;
 }
 
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 25px !important;
+  left: 25px !important;
+  top: unset !important;
+  color: #005573 !important;
+}
+
 .reveal .slide-logo {
   right: 30px;
   padding-right: 20px !important;
   padding-bottom: 30px !important;
   max-height: 100px !important;
-  z-index: -1;
+  z-index: -1000 !important;
 }
 
 .reveal .slide-menu-button {
