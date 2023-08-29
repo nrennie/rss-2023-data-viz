@@ -44,7 +44,7 @@ There are largely no standards.
 ## Napoleon's March on Moscow
 
 ::: {style="font-size: 70%; line-height: 80%"}
-![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow"}
+![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow"width="80%"}
 
 Variables: Lat/lon of army position, direction, army size, geography, temperature.
 :::
@@ -57,7 +57,7 @@ C Minard (1869): The successive losses in men of the French Army in the Russian 
 
 Gauge the sizes, determine the largest piece
 
-![](images/Comparison-01.png){fig-align="center" fig-alt="Comparison 01" width="90%"}
+![](images/Comparison-01.png){fig-align="center" fig-alt="Comparison 01" width="80%"}
 
 ## The Art of Visualisation (2)
 
@@ -183,7 +183,7 @@ Shades of gray
 -   This is the key
 
 ::: {.right}
-Edward Tufte (2001), p. 154
+*Edward Tufte (2001), p. 154*
 :::
 
 ## Axes
@@ -439,7 +439,7 @@ format(c(1234, 1/1234), digits=3)
 #| label: set-theme
 #| echo: false
 #| eval: true
-ggplot2::theme_set(ggplot2::theme_grey(base_size = 40))
+ggplot2::theme_set(ggplot2::theme_grey(base_size = 28))
 ```
 
 ```{r}
@@ -459,20 +459,65 @@ ggplot(
   data = plot_data,
   mapping = aes(x = len, y = dose, fill = supp)
 ) +
-  geom_col(position = "dodge")
+  geom_col(position = "dodge") +
+  labs(fill = "Supplement type", x = "Mean length", y = "Dose (mg/day)")
 ```
 
 ## Colours
 
-*Nicola to add content*
+Why use colour?
+
+## Colours: types of palette
+
+![](images/styling-palettes.png){fig-align="center" fig-alt="Examples of sequential, diverging, and qualitative palettes" width="70%"}
+
+## Colours: don't rely on colour
+
+## Colours: check for accessibility
+
+* Different types of colourblindness
+
+* Monochrome printing
+
+* Ink usage
+
+## Colours: check for accessibility
+
+![](images/styling-colours.png){fig-align="center" fig-alt="A 2x2 grid of bar charts and approximately how they may appear to those with different types of colour deficiency" width="70%"}
 
 ## Annotations
 
-*Nicola to add content*
+* Add clarification or detail
+
+* Highlight an interesting data point
+
+* Labelling data points (sometimes!)
+
+## Annotations
+
+![](images/styling-annotate-bars.png){fig-align="center" fig-alt="A before and after showing the same bar chart of tooth growth data without annotations on the left, and with labels showing bar values on the right." width="90%"}
 
 ## Fonts
 
-*Nicola to add content*
+::: {.incremental}
+
+* Font size: larger fonts are (usually) better
+
+* Font colour: ensure sufficient contrast
+
+* Font face: highlight text using bold font, avoid italics
+
+* Font family: choose a clear font with distinguishable features
+
+:::
+
+## Fonts: font family
+
+<p style="font-family: Arial; font-size: 36pt;">Arial: Does it pass the 1Il test?</p><br>
+
+<p style="font-family: Times New Roman; font-size: 36pt;">Times New Roman: Does it pass the 1Il test?</p><br>
+
+<p style="font-family: Courier New; font-size: 36pt;">Courier New: Does it pass the 1Il test?</p>
 
 ## Alt Text
 
@@ -537,6 +582,12 @@ library(RSSthemes)
 ```
 
 ## Example: plotting with base R
+
+```{r}
+#| eval: true
+#| echo: false
+par(cex = 10)
+```
 
 ::: columns
 ::: column
@@ -637,13 +688,37 @@ g +
   theme_significance()
 ```
 
+
+```{r}
+#| eval: true
+#| echo: false
+par(cex = 1)
+```
+
+## I don't use R...
+
+The guide also has examples of charts with: 
+
+* **Julia**: [datavisguide/docs/tools.html#julia](https://royal-statistical-society.github.io/datavisguide/docs/tools.html#julia) (community contribution)
+
+* **Python**: [datavisguide/docs/tools.html#python](https://royal-statistical-society.github.io/datavisguide/docs/tools.html#python)
+
+  * Python package: [github.com/nrennie/RSSpythemes](https://github.com/nrennie/RSSpythemes)
+  * Currently contains colour palettes but not themes (yet)
+  
+Use something else?
+
+* Help us add to the guide!
+
 # Contributing to the guide {background-color="#005573"}
 
 ## Quarto
 
 ::: columns
 ::: {.column width="80%"}
-[Quarto is an open-source scientific and technical publishing system]{.fragment} [that allows you to combine text, images, code, plots, and tables in a fully-reproducible document.]{.fragment} [Quarto has support for multiple languages including R, Python, Julia, and Observable.]{.fragment} [It works for a range of output formats such as PDFs, HTML documents, websites, presentations,...]{.fragment}
+[Quarto is an open-source scientific and technical publishing system]{.fragment} [that allows you to combine text, images, code, plots, and tables in a fully-reproducible document.]{.fragment}
+
+[Quarto has support for multiple languages including R, Python, Julia, and Observable.]{.fragment} [It works for a range of output formats such as PDFs, HTML documents, websites, presentations,...]{.fragment}
 :::
 
 ::: {.column width="20%"}
@@ -657,9 +732,9 @@ The source code for the guide is stored on GitHub.
 
 If you want to contribute to the guide, the easiest way is via a GitHub pull request.
 
-GitHub link: [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
+* GitHub link: [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
 
-Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide](https://royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide)
+* Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide](https://royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide)
 
 ## GitHub: Make a fork
 
@@ -684,8 +759,6 @@ Ask us!
 Conference session: [GitHub: Version control for research, teaching and industry, Thu 7th \@ 11:40](https://virtual.oxfordabstracts.com/#/event/4019/session/66711)
 
 # Your turn! {background-color="#005573"}
-
-*All to add content*
 
 ## Links
 
