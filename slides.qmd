@@ -1,7 +1,7 @@
 ---
 title: "Best Practices for Data Visualisation"
 author: "Andreas Krause, Nicola Rennie, and Brian Tarran"
-subtitle: "RSS International Conference, Harrogate UK 2023"
+subtitle: "RSS International Conference<br>Harrogate UK 2023"
 editor: source
 format: 
   revealjs: 
@@ -145,7 +145,7 @@ Note the defaults: the boxplot function in R has 27 of them.
   { ![](images/principles-layout.png){fig-alt="Layout"} } 
 -->
 ```
-{{< include R-Graphics-Elements-Layout.qmd >}}
+{{< include R/R-Graphics-Elements-Layout.qmd >}}
 
 ## Lines
 
@@ -189,7 +189,7 @@ Edward Tufte (2001), p. 154
 -   Should generally start at 0
 -   Should not have negative numbers with none in the data
 
-{{< include R-Graphics-Elements-Axes.qmd >}}
+{{< include R/R-Graphics-Elements-Axes.qmd >}}
 
 ```{=html}
 <!-- 
@@ -208,7 +208,7 @@ Edward Tufte (2001), p. 154
 :::
 
 ::: {.column width="60%"}
-{{< include R-Graphics-Elements-Axes-RelChanges.qmd >}}
+{{< include R/R-Graphics-Elements-Axes-RelChanges.qmd >}}
 :::
 :::
 
@@ -225,7 +225,7 @@ Edward Tufte (2001), p. 154
 -   Comparing x and y (example: predicted vs observed data)
 -   Identical axis limits, aspect ratio = 1 -\> square figure
 
-{{< include R-Graphics-Elements-AspectRatio.qmd >}}
+{{< include R/R-Graphics-Elements-AspectRatio.qmd >}}
 :::
 
 <!-- To Do: reduce white space between text and figure -->
@@ -256,7 +256,7 @@ Not intuitive: triangles, circles, squares -\> repeated looks
 -   Should not use up valuable space for data
 -   May be integrated into the figure
 
-{{< include R-Graphics-Elements-Legends.qmd >}}
+{{< include R/R-Graphics-Elements-Legends.qmd >}}
 
 ```{=html}
 <!--
@@ -270,7 +270,7 @@ Not intuitive: triangles, circles, squares -\> repeated looks
 -   Time flows from left to right (past to future)
 -   Longer labels best at the y-axis, horizontally
 
-{{< include R-Graphics-Elements-Orientation.qmd >}}
+{{< include R/R-Graphics-Elements-Orientation.qmd >}}
 
 ```{=html}
 <!-- 
@@ -291,7 +291,7 @@ Not intuitive: triangles, circles, squares -\> repeated looks
 
 -   Symmetric y-axis, line at y=0 -\> focus on data
 
-{{< include R-Graphics-Elements-Auxiliary.qmd >}}
+{{< include R/R-Graphics-Elements-Auxiliary.qmd >}}
 
 ```{=html}
 <!-- 
