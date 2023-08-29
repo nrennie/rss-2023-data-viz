@@ -81,6 +81,7 @@ section.has-dark-background a, section.has-dark-background a:hover {
   left: 25px !important;
   top: unset !important;
   color: #005573 !important;
+  font-size: var(--r-main-font-size) !important;
 }
 
 .reveal .slide-logo {
@@ -92,11 +93,11 @@ section.has-dark-background a, section.has-dark-background a:hover {
 }
 
 .reveal .slide-menu-button {
-    left: 5px;
-    top: 15px;
-    padding-left: 10px;
-    color: #b4b7b8;
-  }
+  left: 5px;
+  top: 15px;
+  padding-left: 10px;
+  color: #b4b7b8;
+}
 
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
