@@ -490,6 +490,23 @@ Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Ces
 
 ## Styling for Significance Magazine
 
+::: columns
+::: column
+
+* Following data visualisation guidelines
+
+* Consistent font and colour choices
+
+* Easy to implement!
+
+:::
+
+::: column
+
+![](images/significance.jpg){fig-align="center" fig-alt="Photo of inside cover of Significance magazine August 2023" width="80%"}
+
+:::
+:::
 *Nicola to add content*
 
 ## {RSSthemes} R package
