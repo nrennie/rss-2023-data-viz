@@ -507,7 +507,6 @@ Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Ces
 
 :::
 :::
-*Nicola to add content*
 
 ## {RSSthemes} R package
 
