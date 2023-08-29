@@ -1,4 +1,6 @@
 ```{r}
+#| fig-align: center
+#| label: orientation
 #| echo: false
 
 # Store figures into a list.

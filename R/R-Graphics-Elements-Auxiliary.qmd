@@ -1,5 +1,6 @@
 ```{r}
 #| label: AuxElementsFromFile
+#| fig-align: center
 #| echo: false
 
 # Function for data set generation.

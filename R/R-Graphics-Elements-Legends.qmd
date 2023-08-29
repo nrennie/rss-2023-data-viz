@@ -1,5 +1,7 @@
 ```{r}
+#| fig-align: center
 #| echo: false
+#| label: legends
 
 # ---
 # EU stock markets, year and indices DAX, SMI, CAC, and FTSE.

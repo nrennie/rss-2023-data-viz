@@ -1,5 +1,7 @@
 ```{r}
+#| fig-align: center
 #| echo: false
+#| label: axes
 
 library(ggplot2)
 plot_data <- data.frame(

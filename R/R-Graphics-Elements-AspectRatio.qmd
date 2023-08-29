@@ -1,5 +1,8 @@
 ```{r}
+#| label: AspectRatio
 #| echo: false
+#| fig-align: center
+#| fig-height: 3
 
 # Observed vs predicted (any data with comparable x and y will do).
 
