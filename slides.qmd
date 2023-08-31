@@ -15,11 +15,57 @@ format:
 
 ## Welcome
 
-*Brian to add content*
+[In this session we will cover...]{.fragment} [what the guide is, and how it came about]{.fragment}[, what's in the guide]{.fragment}[, and how you can contribute to the guide.]{.fragment}
 
-## About the guide
+[We also want to hear from you about what sort of content you'd like to see added to the guide.]{.fragment}
 
-*Brian to add content*
+## Some background
+
+[A survey in 2021 asked RSS members their views on *Significance* magazine.]{.fragment}
+
+[Respondents were asked, “What aspects of content could be improved?”]{.fragment}
+
+::: {.incremental}
+
+* "Better, more consistent charts... I'd like to see a house style like *The Economist*"
+* "The plots sometimes look amateurish..."
+* "The figures are often difficult to read..."
+
+:::
+
+## Help wanted
+
+[We put out a call:]{.fragment} 
+
+["RSS publications seek data visualisation expert to develop best practice guidance"]{.fragment}
+
+## Help wanted
+
+The guide would:
+
+::: {.incremental}
+
+* Help contributors develop data visualisations that are high quality, readable, effective at conveying information, and fulfil their intended purpose.
+* Summarise and link to authoritative advice on chart styles and formats for different types of data.
+* Show how to override software defaults in common data visualisation software and packages.
+
+:::
+
+## Help wanted
+
+It would also provide basic information on figure sizes, fonts, colours, resolution, etc., used in RSS publications.
+
+## Help wanted
+
+Andreas and Nicola answered the call. [We started work in February this year]{.fragment}[, and six months later...]{.fragment}
+
+## The guide was published
+
+![](images/guide-screenshot.png){fig-align="center" fig-alt="Screenshot of data vis guide homepage" width="70%"}
+
+## How the guide is structured
+
+![](images/guide-toc.png){fig-align="center" fig-alt="Screenshot of data vis guide table of contents" width="70%"}
 
 # Why visualise data? {background-color="#005573"}
 
