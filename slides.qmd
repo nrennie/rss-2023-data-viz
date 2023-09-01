@@ -83,18 +83,6 @@ There are largely no standards.
 -   Bolster credibility: see yourself
 -   Summarise content
 
-## Napoleon's March on Moscow
-
-::: {style="font-size: 70%; line-height: 80%"}
-![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow" width="90%"}
-
-Variables: Lat/lon of army position, direction, army size, geography, temperature.
-:::
-
-::: {style="font-size: 45%; line-height: 20%"}
-C Minard (1869): The successive losses in men of the French Army in the Russian campaign 1812-1813. Source: Wikimedia Commons.
-:::
-
 ## The Art of Visualisation (1)
 
 Gauge the sizes, determine the largest piece
