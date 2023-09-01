@@ -15,7 +15,7 @@ format:
 
 ## Welcome
 
-[In this session we will cover...]{.fragment} [what the guide is, and how it came about]{.fragment}[, what's in the guide]{.fragment}[, and how you can contribute to the guide.]{.fragment}
+[In this session we will cover...]{.fragment} [what the guide is, and how it came about, what's in the guide, and how you can contribute to the guide.]{.fragment}
 
 [We also want to hear from you about what sort of content you'd like to see added to the guide.]{.fragment}
 
@@ -23,19 +23,17 @@ format:
 
 [A survey in 2021 asked RSS members their views on *Significance* magazine.]{.fragment}
 
-[Respondents were asked, “What aspects of content could be improved?”]{.fragment}
+[Respondents were asked, "What aspects of content could be improved?"]{.fragment}
 
-::: {.incremental}
-
-* "Better, more consistent charts... I'd like to see a house style like *The Economist*"
-* "The plots sometimes look amateurish..."
-* "The figures are often difficult to read..."
-
+::: incremental
+-   "Better, more consistent charts... I'd like to see a house style like *The Economist*"
+-   "The plots sometimes look amateurish..."
+-   "The figures are often difficult to read..."
 :::
 
 ## Help wanted
 
-[We put out a call:]{.fragment} 
+[We put out a call:]{.fragment}
 
 ["RSS publications seek data visualisation expert to develop best practice guidance"]{.fragment}
 
@@ -43,12 +41,10 @@ format:
 
 The guide would:
 
-::: {.incremental}
-
-* Help contributors develop data visualisations that are high quality, readable, effective at conveying information, and fulfil their intended purpose.
-* Summarise and link to authoritative advice on chart styles and formats for different types of data.
-* Show how to override software defaults in common data visualisation software and packages.
-
+::: incremental
+-   Help contributors develop data visualisations that are high quality, readable, effective at conveying information, and fulfil their intended purpose.
+-   Summarise and link to authoritative advice on chart styles and formats for different types of data.
+-   Show how to override software defaults in common data visualisation software and packages.
 :::
 
 ## Help wanted
@@ -57,7 +53,7 @@ It would also provide basic information on figure sizes, fonts, colours, resolut
 
 ## Help wanted
 
-Andreas and Nicola answered the call. [We started work in February this year]{.fragment}[, and six months later...]{.fragment}
+Andreas and Nicola answered the call. [We started work in February this year, and six months later...]{.fragment}
 
 ## The guide was published
 
@@ -90,7 +86,7 @@ There are largely no standards.
 ## Napoleon's March on Moscow
 
 ::: {style="font-size: 70%; line-height: 80%"}
-![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow"width="90%"}
+![](images/Motivation-Minard.png){fig-align="center" fig-alt="Napoleon March on Moscow" width="90%"}
 
 Variables: Lat/lon of army position, direction, army size, geography, temperature.
 :::
@@ -228,7 +224,7 @@ Shades of gray
 -   Provide an easily comprehended order to the data measures
 -   This is the key
 
-::: {.right}
+::: right
 *Edward Tufte (2001), p. 154*
 :::
 
@@ -371,23 +367,19 @@ Not intuitive: triangles, circles, squares -\> repeated looks
 
 ::: columns
 ::: column
-
-| **Name** | **Age** | **Weight**      |
-|:---------|--------:|----------------:|
-| Alex     | 55      | 123.45          |
-| Sandy    | 33      |  77.07          |
-
+| **Name** | **Age** | **Weight** |
+|:---------|--------:|-----------:|
+| Alex     |      55 |     123.45 |
+| Sandy    |      33 |      77.07 |
 :::
 
 ::: column
-| **Name**          | Alex   | Sandy |
-|:------------------|-------:|------:|
-| **Age**           | 55     | 33    |
-| **Weight**        | 123.45 | 77.07 |
-
+| **Name**   |   Alex | Sandy |
+|:-----------|-------:|------:|
+| **Age**    |     55 |    33 |
+| **Weight** | 123.45 | 77.07 |
 :::
-
-::::
+:::
 
 ## Tables: Alignment
 
@@ -399,23 +391,19 @@ Generally helpful:
 
 ::: columns
 ::: column
-
-| **Name** | **Age** | **Weight**      |
-|:---------|--------:|----------------:|
-| Alex     | 55      | 123.45          |
-| Sandy    | 33      |  77.07          |
-
+| **Name** | **Age** | **Weight** |
+|:---------|--------:|-----------:|
+| Alex     |      55 |     123.45 |
+| Sandy    |      33 |      77.07 |
 :::
 
 ::: column
-| **Name**          | Alex   | Sandy |
-|:------------------|-------:|------:|
-| **Age**           | 55.00  | 33.00 |
-| **Weight**        | 123.45 | 77.07 |
-
+| **Name**   |   Alex | Sandy |
+|:-----------|-------:|------:|
+| **Age**    |  55.00 | 33.00 |
+| **Weight** | 123.45 | 77.07 |
 :::
-
-::::
+:::
 
 ## Tables: Digits
 
@@ -436,23 +424,19 @@ format(c(1234, 1/1234), digits=3)
 
 ::: columns
 ::: column
-
 | **Variable** | **Mean (%CV)** |
-|:-------------|--------------:|
-| Age          | 55 (9)        |
-| Weight       | 88 (25)       |
-
+|:-------------|---------------:|
+| Age          |         55 (9) |
+| Weight       |        88 (25) |
 :::
 
 ::: column
-| **Variable** | **Mean**    | **%CV** |
-|:----------|---------------:|--------:|
-| Age       | 55             |   9     |
-| Weight    | 88             |  25     |
-
+| **Variable** | **Mean** | **%CV** |
+|:-------------|---------:|--------:|
+| Age          |       55 |       9 |
+| Weight       |       88 |      25 |
 :::
-
-::::
+:::
 
 ## Tables: Orientation
 
@@ -465,7 +449,6 @@ format(c(1234, 1/1234), digits=3)
 -   These are usually the standard fonts
 -   Use of different fonts and colors only for a purpose
 -   Example: extreme values in boldface or red
-
 
 ## Recap: Creating Charts and Tables
 
@@ -513,9 +496,9 @@ ggplot(
 
 Why use colours in data visualisation?
 
-* Colours can highlight or emphasise parts of your data.
+-   Colours can highlight or emphasise parts of your data.
 
-* Not always the most effective for e.g. communicating differences between variables.
+-   Not always the most effective for e.g. communicating differences between variables.
 
 ## Colours: types of palette
 
@@ -527,11 +510,11 @@ Why use colours in data visualisation?
 
 ## Colours: check for accessibility
 
-* Different types of colourblindness
+-   Different types of colourblindness
 
-* Monochrome printing
+-   Monochrome printing
 
-* Ink usage
+-   Ink usage
 
 ## Colours: check for accessibility
 
@@ -540,21 +523,18 @@ Why use colours in data visualisation?
 ![](images/styling-intro.png){fig-align="center" fig-alt="A nicely styled bar charts of guinea pig tooth growth" width="100%"}
 :::
 
-::: {.column width="70%" .fragment}
+::: {.column .fragment width="70%"}
 ![](images/styling-colours.png){fig-align="center" fig-alt="A 2x2 grid of bar charts and approximately how they may appear to those with different types of colour deficiency" width="70%"}
 :::
-
 :::
-
-
 
 ## Annotations
 
-* Add clarification or detail
+-   Add clarification or detail
 
-* Highlight an interesting data point
+-   Highlight an interesting data point
 
-* Labelling data points (sometimes!)
+-   Labelling data points (sometimes!)
 
 ## Annotations
 
@@ -562,25 +542,39 @@ Why use colours in data visualisation?
 
 ## Fonts
 
-::: {.incremental}
+::: incremental
+-   Font size: larger fonts are (usually) better
 
-* Font size: larger fonts are (usually) better
+-   Font colour: ensure sufficient contrast
 
-* Font colour: ensure sufficient contrast
+-   Font face: highlight text using bold font, avoid italics
 
-* Font face: highlight text using bold font, avoid italics
-
-* Font family: choose a clear font with distinguishable features
-
+-   Font family: choose a clear font with distinguishable features
 :::
 
 ## Fonts: font family
 
-<p style="font-family: Arial; font-size: 36pt;">Arial: Does it pass the 1Il test?</p><br>
+<p style="font-family: Arial; font-size: 36pt;">
 
-<p style="font-family: Times New Roman; font-size: 36pt;">Times New Roman: Does it pass the 1Il test?</p><br>
+Arial: Does it pass the 1Il test?
 
-<p style="font-family: Courier New; font-size: 36pt;">Courier New: Does it pass the 1Il test?</p>
+</p>
+
+<br>
+
+<p style="font-family: Times New Roman; font-size: 36pt;">
+
+Times New Roman: Does it pass the 1Il test?
+
+</p>
+
+<br>
+
+<p style="font-family: Courier New; font-size: 36pt;">
+
+Courier New: Does it pass the 1Il test?
+
+</p>
 
 ## Alt Text
 
@@ -600,19 +594,15 @@ Source: [medium.com/nightingale/writing-alt-text-for-data-visualization (Amy Ces
 
 ::: columns
 ::: column
+-   Following data visualisation guidelines
 
-* Following data visualisation guidelines
+-   Consistent font and colour choices
 
-* Consistent font and colour choices
-
-* Easy to implement!
-
+-   Easy to implement!
 :::
 
 ::: column
-
 ![](images/significance.jpg){fig-align="center" fig-alt="Photo of inside cover of Significance magazine August 2023" width="80%"}
-
 :::
 :::
 
@@ -767,7 +757,6 @@ g +
   theme_significance(base_size = 36)
 ```
 
-
 ```{r}
 #| eval: true
 #| echo: false
@@ -776,18 +765,18 @@ par(cex = 1)
 
 ## I don't use R...
 
-The guide also has examples of charts with: 
+The guide also has examples of charts with:
 
-* **Julia**: [datavisguide/docs/tools.html#julia](https://royal-statistical-society.github.io/datavisguide/docs/tools.html#julia) (community contribution)
+-   **Julia**: [datavisguide/docs/tools.html#julia](https://royal-statistical-society.github.io/datavisguide/docs/tools.html#julia) (community contribution)
 
-* **Python**: [datavisguide/docs/tools.html#python](https://royal-statistical-society.github.io/datavisguide/docs/tools.html#python)
+-   **Python**: [datavisguide/docs/tools.html#python](https://royal-statistical-society.github.io/datavisguide/docs/tools.html#python)
 
-  * Python package: [github.com/nrennie/RSSpythemes](https://github.com/nrennie/RSSpythemes)
-  * Currently contains colour palettes but not themes (yet)
-  
+    -   Python package: [github.com/nrennie/RSSpythemes](https://github.com/nrennie/RSSpythemes)
+    -   Currently contains colour palettes but not themes (yet)
+
 Use something else?
 
-* Help us add to the guide!
+-   Help us add to the guide!
 
 # Contributing to the guide {background-color="#005573"}
 
@@ -811,9 +800,9 @@ The source code for the guide is stored on GitHub.
 
 If you want to contribute to the guide, the easiest way is via a GitHub pull request.
 
-* GitHub link: [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
+-   GitHub link: [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
 
-* Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide](https://royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide)
+-   Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide](https://royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide)
 
 ## GitHub: Make a fork
 
@@ -844,53 +833,3 @@ Conference session: [GitHub: Version control for research, teaching and industry
 {{< fa globe >}} [royal-statistical-society.github.io/datavisguide](https://royal-statistical-society.github.io/datavisguide/)
 
 {{< fa brands github >}} [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
-
-# Additional slides {background-color="#005573"}
-
-## Case study: Football tickets
-
-![](images/Case%20study-stadium%20ticket%201.png){fig-align="center" fig-alt="Stadium map"}
-
--   Hovering shows available tickets and prices.
-
--   Select Block A3. Note the positioning of pitch and block.
-
-## Case study: Football tickets cont'd
-
-Select your seat.
-
-![](images/Case%20study-stadium%20ticket%202.png){fig-align="center" fig-alt="Stadium map sector"}
-
--   The map is upside down now (pitch at bottom)!
-
--   Seats available are marked red!
-
-## Case study: Football tickets cont'd
-
-Messages:
-
--   Do not confuse the users!
-
--   Use consistent elements (axes, orientations)
-
--   Use intuitive elements (here: colors)
-
-![](images/Case%20study-stadium%20ticket%201.png){fig-align="center" fig-alt="Stadium map" width="40%"} ![](images/Case%20study-stadium%20ticket%202.png){fig-align="center" fig-alt="Stadium map sector" width="50%"}
-
-## Case Study: Blood Sampling
-
-```{=html}
-<!--# Number of blood samples at planned time points,
-shown on concentration-time curve.-->
-```
-No of blood samples vs time on conc.-time curve.
-
-![](images/Case%20study-Conc%20time.png){fig-align="center" fig-alt="conc-time profile"}
-
-Any issues?
-
-## Case study: impact factor trend
-
-![](images/Case%20study-impact%20factor%20trend.png){fig-align="center" fig-alt="impact factor trend"}
-
-Any issues?
