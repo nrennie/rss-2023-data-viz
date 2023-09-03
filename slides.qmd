@@ -542,27 +542,15 @@ Why use colours in data visualisation?
 
 ## Fonts: font family
 
-<p style="font-family: Arial; font-size: 36pt;">
-
-Arial: Does it pass the 1Il test?
-
-</p>
+<p style="font-family: Arial; font-size: 36pt;">Arial: Does it pass the 1Il test?</p>
 
 <br>
 
-<p style="font-family: Times New Roman; font-size: 36pt;">
-
-Times New Roman: Does it pass the 1Il test?
-
-</p>
+<p style="font-family: Times New Roman; font-size: 36pt;">Times New Roman: Does it pass the 1Il test?</p>
 
 <br>
 
-<p style="font-family: Courier New; font-size: 36pt;">
-
-Courier New: Does it pass the 1Il test?
-
-</p>
+<p style="font-family: Courier New; font-size: 36pt;">Courier New: Does it pass the 1Il test?</p>
 
 ## Alt Text
 
@@ -736,7 +724,7 @@ g +
 #| echo: true
 #| output-location: column
 #| fig-height: 6
-#| code-line-numbers: "5"
+#| code-line-numbers: "6"
 g +
   scale_fill_rss_d("signif_qual") +
   labs(
@@ -766,6 +754,8 @@ Use something else?
 
 -   Help us add to the guide!
 
+# Questions? {background-color="#005573"}
+
 # Contributing to the guide {background-color="#005573"}
 
 ## Quarto
@@ -786,38 +776,64 @@ Use something else?
 
 The source code for the guide is stored on GitHub.
 
-If you want to contribute to the guide, the easiest way is via a GitHub pull request.
+If you want to contribute to the guide, the easiest way is via GitHub.
 
 -   GitHub link: [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
 
 -   Contributor guide: [royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide](https://royal-statistical-society.github.io/datavisguide/howto.html#how-to-contribute-to-this-guide)
 
-## GitHub: Make a fork
+## To ask a question or make a suggestion
+
+Create or add to a GitHub discussion
+
+![](images/github_discuss.png){fig-align="center" fig-alt="Screenshot of github repository with discussions shown" width="60%"}
+
+## To report a bug or add a feature
+
+Create an issue and describe:
+
+* what the bug or error is, and add the issue tag *bug*
+
+* what feature you want to include, and add the issue tag *enhancement*
+
+![](images/github0.png){fig-align="center" fig-alt="Screenshot of github repository with issue button highlighted" width="80%"}
+
+## Make a fork
 
 ![](images/github1.png){fig-align="center" fig-alt="Screenshot of github repository with fork button highlighted" width="60%"}
 
-## GitHub: Clone the repository
+## Clone the repository
 
 ![](images/github2.png){fig-align="center" fig-alt="Screenshot of github repository with clone button highlighted" width="60%"}
 
-## GitHub: Make some changes and commit them
+Then make your changes and commit them...
 
-*Nicola to add content*
+## Create a pull request
 
-## GitHub: Create a pull request
+Open a pull request, describe what changes it contains, reference any *issues* it describes, and wait for review.
 
-*Nicola to add content*
+![](images/github3.png){fig-align="center" fig-alt="Screenshot of github repository with pull request shown" width="60%"}
 
 ## Need help with GitHub?
 
 Ask us!
 
-Conference session: [GitHub: Version control for research, teaching and industry, Thu 7th \@ 11:40](https://virtual.oxfordabstracts.com/#/event/4019/session/66711)
+<br>
 
-# Your turn! {background-color="#005573"}
+RSS Conference session: [GitHub: Version control for research, teaching and industry, Thu 7th \@ 11:40](https://virtual.oxfordabstracts.com/#/event/4019/session/66711)
+
+# Questions? {background-color="#005573"}
 
 ## Links
 
+<br> 
+
 {{< fa globe >}} [royal-statistical-society.github.io/datavisguide](https://royal-statistical-society.github.io/datavisguide/)
 
+<br>
+
 {{< fa brands github >}} [github.com/royal-statistical-society/datavisguide](https://github.com/royal-statistical-society/datavisguide)
+
+<br>
+
+{{< fa laptop >}} [nrennie.github.io/rss-conference-2023-data-viz-slides](https://nrennie.github.io/rss-conference-2023-data-viz-slides/#/title-slide)
