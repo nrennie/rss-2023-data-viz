@@ -621,12 +621,41 @@ Load package:
 library(RSSthemes)
 ```
 
-## Example: plotting with base R
+## Plotting with base R
 
+Examples using *Significance* colours
+
+::: columns
+::: column
+
+* `signif_blue`
+
+* `signif_green`
+
+* `signif_orange`
+
+* `signif_red`
+
+* `signif_yellow`
+
+:::
+
+::: {.column}
 ```{r}
+#| label: base-barchart-blue
+#| code-line-numbers: "3"
 #| eval: true
-#| echo: false
+#| echo: true
+barplot(
+  height = table(mtcars$gear),
+  col = signif_blue,
+  cex.axis = 4, cex.names = 4
+)
 ```
+:::
+:::
+
+## Plotting with base R
 
 ::: columns
 ::: column
@@ -670,7 +699,7 @@ palette("default")
 :::
 :::
 
-## Example: plotting with ggplot2}
+## Plotting with ggplot2}
 
 ::: columns
 ::: column
