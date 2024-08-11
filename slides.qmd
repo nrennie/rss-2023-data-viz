@@ -865,4 +865,4 @@ RSS Conference session: [GitHub: Version control for research, teaching and indu
 
 <br>
 
-{{< fa laptop >}} [nrennie.github.io/rss-conference-2023-data-viz-slides](https://nrennie.github.io/rss-conference-2023-data-viz-slides/#/title-slide)
+{{< fa laptop >}} [nrennie.github.io/rss-2023-data-viz](https://nrennie.github.io/rss-2023-data-viz/)
